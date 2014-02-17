@@ -64,9 +64,9 @@ public class BenchmarkLongLucene extends Benchmark {
 		}
 		f1.delete();
 		f2.delete();
-		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_50);
+		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_46);
 		ILongIndexWriter tmp = new LongLuceneDirectory(f1.getAbsolutePath(), analyzer, false, null).writer();
-		IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_50, analyzer);
+		IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_46, analyzer);
 		iwc.setRAMBufferSizeMB(512);
 		IndexWriter tmp2 = new IndexWriter(new MMapDirectory(f2, new SingleInstanceLockFactory()), iwc);
 		Random r = new Random();

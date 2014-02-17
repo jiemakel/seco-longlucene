@@ -16,7 +16,7 @@ public class TestAttributeCloningCachingTokenFilter {
 
 	@Test
 	public void testCaching() throws IOException {
-		TokenStream f1 = new StandardAnalyzer(Version.LUCENE_50).tokenStream("foo", new StringReader("testing testing, what will come out of this?"));
+		TokenStream f1 = new StandardAnalyzer(Version.LUCENE_46).tokenStream("foo", new StringReader("testing testing, what will come out of this?"));
 		TokenStream t1 = AttributeCloningCachingTokenFilter.getCachedTokenStream(f1);
 		TokenStream t2 = AttributeCloningCachingTokenFilter.getCachedTokenStream(t1);
 		try {

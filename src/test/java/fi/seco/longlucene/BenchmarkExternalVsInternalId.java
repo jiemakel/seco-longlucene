@@ -58,7 +58,7 @@ public class BenchmarkExternalVsInternalId extends Benchmark {
 		f1.delete();
 		f2.delete();
 		f3.delete();
-		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_50);
+		Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_46);
 		ILongIndexWriter tmp1 = new LongLuceneDirectory(f1.getAbsolutePath(), analyzer, false, null).writer();
 		ILongIndexWriter tmp2 = new LongLuceneDirectory(f2.getAbsolutePath(), analyzer, false, null).writer();
 		ILongIndexWriter tmp3 = new LongLuceneDirectory(f3.getAbsolutePath(), analyzer, false, null).writer();
